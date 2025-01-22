@@ -1,23 +1,21 @@
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+bogminic:
+  name: Bogdan Mihai Nicolae
+  title: Software Engineer @ Computacenter
+  url: https://bogminic.com
+  image_url: https://github.com/bogminic.png
   page: true
   socials:
-    x: yangshunz
-    github: yangshun
+    linkedin: bogdanmihainicolae
+    github: bogminic
+    website: https://bogminic.com
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+damun:
+  name: Dana Maria Nicolae
+  title: Software Engineer @ Deutsche Bank
+  url: https://damun.eu
+  image_url: https://github.com/danamunteanu.png
+  page: true
   socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+    linkedin: dana-maria-munteanu
+    github: danamunteanu
+    website: https://damun.eu
