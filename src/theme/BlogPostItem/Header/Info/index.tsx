@@ -48,19 +48,16 @@ function Spacer() {
 }
 
 function Authors ({authors}) {
-  console.log('authors', authors);
   return (
     <>
       {authors.map((author, index) => {
-        console.log('author', author);
-        console.log('index', index);
         return (
-          <>
-            <a key={index} href={author.page.permalink}>
+          <span key={author.key}>
+            <a href={author.page.permalink}>
               {author.name}
             </a>
             {index !== authors.length - 1 && ', '}
-          </>
+          </span>
         );
       })}
     </>
@@ -70,8 +67,6 @@ function Authors ({authors}) {
 export default function BlogPostItemHeaderInfo({className}: Props): ReactNode {
   const {metadata} = useBlogPost();
   const {date, readingTime, authors} = metadata;
-  
-  // console.log('metadata', metadata);
 
   const dateTimeFormat = useDateTimeFormat({
     day: 'numeric',
