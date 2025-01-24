@@ -60,12 +60,13 @@ function Authors ({authors}) {
           </span>
         );
       })}
+      <Spacer />
     </>
   );
 }
 
 export default function BlogPostItemHeaderInfo({className}: Props): ReactNode {
-  const {metadata} = useBlogPost();
+  const {metadata, isBlogPostPage} = useBlogPost();
   const {date, readingTime, authors} = metadata;
 
   const dateTimeFormat = useDateTimeFormat({
@@ -80,8 +81,7 @@ export default function BlogPostItemHeaderInfo({className}: Props): ReactNode {
 
   return (
     <div className={clsx(styles.container, 'margin-vert--md', className)}>
-      <Authors authors={authors} />
-      <Spacer />
+      {!isBlogPostPage && <Authors authors={authors} />}
       <DateTime date={date} formattedDate={formatDate(date)} />
       {typeof readingTime !== 'undefined' && (
         <>
