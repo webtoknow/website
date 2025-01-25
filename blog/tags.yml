@@ -1,19 +1,29 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+jobsInIT:
+  label: Jobs in IT
+  permalink: /jonbs-in-it
+  description: Jobs in IT tag description
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+frontend:
+  label: Frontend Development
+  permalink: /frontend-development
+  description: Frontend Development tag description
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+backend:
+  label: Backend Development
+  permalink: /backend-development
+  description: Backend Development tag description
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+homeAutomation:
+  label: Home Automation
+  permalink: /home-automation
+  description: Home Automation tag description
+
+security:
+  label: Security
+  permalink: /security
+  description: Security tag description
+
+ai:
+  label: Artificial Intelligence
+  permalink: /artificial-intelligence
+  description: Artificial Intelligence tag description
