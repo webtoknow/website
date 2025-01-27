@@ -7,6 +7,7 @@ import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import type {Props} from '@theme/BlogPostItem/Header/Info';
 
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 // Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
@@ -53,9 +54,11 @@ function Authors ({authors}) {
       {authors.map((author, index) => {
         return (
           <span key={author.key}>
-            <a href={author.page.permalink}>
-              {author.name}
-            </a>
+            <Link
+              className={clsx(styles.author)}
+              to={author.page.permalink}>
+               {author.name}
+            </Link>
             {index !== authors.length - 1 && ', '}
           </span>
         );

@@ -1,3 +1,13 @@
 .container {
-  font-size: 0.9rem;
+  color: #626E8A;
+  font-weight: 600;
+}
+
+.author {
+  color: var(--ifm-font-color-base);
+  font-weight: 700;
+}
+
+.author:hover {
+  color: var(--ifm-font-color-base);
 }
