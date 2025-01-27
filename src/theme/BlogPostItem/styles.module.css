@@ -13,4 +13,5 @@
 
 .article {
   display: flex;
+  align-items: center;
 }
