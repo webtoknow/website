@@ -7,6 +7,9 @@ import BlogPostItemContent from '@theme/BlogPostItem/Content';
 import BlogPostItemFooter from '@theme/BlogPostItem/Footer';
 import type {Props} from '@theme/BlogPostItem';
 
+import styles from './styles.module.css';
+
+
 // apply a bottom margin in list view
 function useContainerClassName() {
   const {isBlogPostPage} = useBlogPost();
@@ -15,11 +18,21 @@ function useContainerClassName() {
 
 export default function BlogPostItem({children, className}: Props): ReactNode {
   const containerClassName = useContainerClassName();
+  const {
+    isBlogPostPage,
+    metadata: {
+      frontMatter: { image },
+    },
+  } = useBlogPost();
+
   return (
-    <BlogPostItemContainer className={clsx(containerClassName, className)}>
-      <BlogPostItemHeader />
-      <BlogPostItemContent>{children}</BlogPostItemContent>
-      <BlogPostItemFooter />
+    <BlogPostItemContainer className={clsx(containerClassName, className, !isBlogPostPage && styles.article)}>
+      {!isBlogPostPage && <img className={clsx(styles.image)} src={image} alt="blog post image" />}
+      <div>
+        <BlogPostItemHeader />
+        <BlogPostItemContent>{children}</BlogPostItemContent>
+        <BlogPostItemFooter />
+      </div>
     </BlogPostItemContainer>
   );
 }

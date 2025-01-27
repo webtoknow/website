@@ -1,0 +1,16 @@
+.image {
+  width: 19rem;
+  height: 19rem;
+  border-radius: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 996px) {
+  .image {
+    display: none;
+  }
+}
+
+.article {
+  display: flex;
+}
