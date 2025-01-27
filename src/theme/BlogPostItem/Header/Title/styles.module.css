@@ -9,12 +9,12 @@
 }
 
 .link {
-  color: var(--color-text);
+  color: var(--ifm-font-color-base);
   text-decoration: none;
 }
 
 .link:hover {
-  color: var(--color-text);
+  color: var(--ifm-font-color-base);
 }
 
 /**
