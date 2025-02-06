@@ -83,7 +83,7 @@ export default function BlogPostItemHeaderInfo({className}: Props): ReactNode {
     dateTimeFormat.format(new Date(blogDate));
 
   return (
-    <div className={clsx(styles.container, 'margin-vert--md', className)}>
+    <div className={clsx(styles.container, className)}>
       {!isBlogPostPage && <Authors authors={authors} />}
       <DateTime date={date} formattedDate={formatDate(date)} />
       {typeof readingTime !== 'undefined' && (

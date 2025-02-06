@@ -1,7 +1,7 @@
 .image {
   width: 19rem;
   height: 19rem;
-  border-radius: 1.5rem;
+  border-radius: calc(var(--ifm-global-radius) * 3.75);
   margin-right: 1.5rem;
 }
 

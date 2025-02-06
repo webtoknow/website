@@ -4,14 +4,12 @@ import Layout from '@theme/Layout';
 import BlogSidebar from '@theme/BlogSidebar';
 
 import type {Props} from '@theme/BlogLayout';
-import useRouteContext from '@docusaurus/useRouteContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useLocation } from '@docusaurus/router';
 
 export default function BlogLayout(props: Props): ReactNode {
   const {sidebar, toc, children, ...layoutProps} = props;
   const {pathname} = useLocation();
-  const isBlogPostPage = pathname.includes('/blog/');
+  const isBlogPostDetailsPage = pathname.includes('/blog/');
 
   return (
     <Layout {...layoutProps}>
@@ -20,8 +18,8 @@ export default function BlogLayout(props: Props): ReactNode {
          <BlogSidebar sidebar={sidebar} />
           <main
             className={clsx('col', {
-              'col--12': !isBlogPostPage,
-              'col--9': isBlogPostPage,
+              'col--12': !isBlogPostDetailsPage,
+              'col--9': isBlogPostDetailsPage,
             })}>
             {children}
           </main>

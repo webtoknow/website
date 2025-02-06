@@ -1,6 +1,7 @@
 .container {
   color: #626E8A;
   font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 .author {
@@ -10,4 +11,10 @@
 
 .author:hover {
   color: var(--ifm-font-color-base);
+}
+
+@media (max-width: 996px) {
+  .container {
+    margin-bottom: 1rem;
+  }
 }

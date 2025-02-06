@@ -33,7 +33,7 @@ export default function BlogPostItemFooter(): ReactNode {
     const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
 
     return (
-      <footer className="docusaurus-mt-lg">
+      <footer className="margin-top--lg">
         {tagsExists && (
           <div
             className={clsx(
@@ -63,7 +63,7 @@ export default function BlogPostItemFooter(): ReactNode {
   // BlogPost footer - list view
   else {
     return (
-      <footer className="row docusaurus-mt-lg">
+      <footer className="row margin-top--sm">
         {tagsExists && (
           <div className={clsx('col', {'col--9': truncatedPost})}>
             <TagsListInline tags={tags} />

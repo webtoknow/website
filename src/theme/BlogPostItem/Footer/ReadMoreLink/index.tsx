@@ -1,7 +1,10 @@
 import React, {type ReactNode} from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import type {Props} from '@theme/BlogPostItem/Footer/ReadMoreLink';
+
+import styles from './styles.module.css';
 
 function ReadMoreLabel() {
   return (
@@ -9,7 +12,7 @@ function ReadMoreLabel() {
       <Translate
         id="theme.blog.post.readMore"
         description="The label used in blog post item excerpts to link to full blog posts">
-        Read more
+        Read more &#10132;
       </Translate>
     </b>
   );
@@ -21,6 +24,7 @@ export default function BlogPostItemFooterReadMoreLink(
   const {blogPostTitle, ...linkProps} = props;
   return (
     <Link
+      className={clsx(styles.readMoreLink)}
       aria-label={translate(
         {
           message: 'Read more about {title}',
