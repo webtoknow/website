@@ -32,7 +32,6 @@ function BlogListPageMetadata(props: Props): ReactNode {
 
 function BlogListPageContent(props: Props): ReactNode {
   const {metadata, items, sidebar} = props;
-  // const {isBlogPostPage} = useBlogPost();
   console.log('props: ', props);
   return (
     <BlogLayout sidebar={sidebar}>
