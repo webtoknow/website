@@ -1,0 +1,25 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  grid-row: 3;
+  margin-right: calc(-30% - 40px);
+  padding-bottom: 6rem;
+}
+
+.image {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+}
+
+@media (max-width: 996px) {
+    .header {
+      display: block;
+      padding-bottom: 2rem;
+    }
+  }
+
+@media (max-width: 996px) {
+  .image {
+    display: none;
+  }
+}
