@@ -53,7 +53,5 @@ export default function BlogListPage(props: Props): ReactNode {
     </HtmlClassNameProvider>
   );
 }
-function useBlogPost(): { isBlogPostPage: any; } {
-  throw new Error('Function not implemented.');
-}
+
 
