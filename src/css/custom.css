@@ -7,12 +7,18 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #004fff;
-  --ifm-color-primary-dark: #0044e5; /* Slightly darker */
-  --ifm-color-primary-darker: #003bcc; /* Darker */
-  --ifm-color-primary-darkest: #002999; /* Darkest */
-  --ifm-color-primary-light: #005bff; /* Slightly lighter */
-  --ifm-color-primary-lighter: #336fff; /* Lighter */
-  --ifm-color-primary-lightest: #6699ff; /* Lightest */
+  --ifm-color-primary-dark: #0044e5;
+  /* Slightly darker */
+  --ifm-color-primary-darker: #003bcc;
+  /* Darker */
+  --ifm-color-primary-darkest: #002999;
+  /* Darkest */
+  --ifm-color-primary-light: #005bff;
+  /* Slightly lighter */
+  --ifm-color-primary-lighter: #336fff;
+  /* Lighter */
+  --ifm-color-primary-lightest: #6699ff;
+  /* Lightest */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -20,9 +26,9 @@
     Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-  
-    --ifm-font-color-base: #00184d;
-  
+
+  --ifm-font-color-base: #00184d;
+
   --docusaurus-tag-list-border: #626e8a;
   --docusaurus-secondary-color: #14e8a7;
 }
@@ -36,10 +42,29 @@
   --ifm-color-primary-light: #16f1b3;
   --ifm-color-primary-lighter: #33f3bd;
   --ifm-color-primary-lightest: #50f5c8;
-  
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  
+
   --ifm-font-color-base: #fff;
 
   --docusaurus-secondary-color: #004fff;
+}
+
+
+
+/* Custom CSS */
+
+/* Header curve */
+body:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 50vh;
+  background-image: url(./curve-header.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
