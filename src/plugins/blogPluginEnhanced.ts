@@ -31,9 +31,14 @@ export default async function blogPluginEnhanced(
         }));
 
       const { setGlobalData } = actions;
-      const { blogTags } = content as { blogTags?: string[] };
+      const { blogTags } = content as unknown as { blogTags: Record<string, { label: string; permalink: string; description: string }> };
+      const allTags = Object.values(blogTags).map(({ label, permalink, description }) => ({
+        label,
+        permalink,
+        description,
+      }));
 
-      setGlobalData({ blogTags, recentPosts });
+      setGlobalData({ allTags, recentPosts });
     },
   };
 }
