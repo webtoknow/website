@@ -1,29 +1,29 @@
 jobsInIT:
   label: Jobs in IT
-  permalink: /jonbs-in-it
-  description: Jobs in IT tag description
+  permalink: /jobs-in-it
+  description: Jobs in IT explores tech careers, roles, and industry trends.
 
 frontend:
   label: Frontend Development
   permalink: /frontend-development
-  description: Frontend Development tag description
+  description: Frontend Development covers UI, UX, and web technologies.
 
 backend:
   label: Backend Development
   permalink: /backend-development
-  description: Backend Development tag description
+  description: Backend Development covers server-side logic, databases, APIs, and web technologies.
 
 homeAutomation:
   label: Home Automation
   permalink: /home-automation
-  description: Home Automation tag description
+  description: Home Automation covers smart devices, IoT, and automated systems.
 
 security:
   label: Security
   permalink: /security
-  description: Security tag description
+  description: Security covers cybersecurity, best practices, and threat protection.
 
 ai:
   label: Artificial Intelligence
   permalink: /artificial-intelligence
-  description: Artificial Intelligence tag description
+  description: Artificial Intelligence covers machine learning, automation, and AI innovations.
