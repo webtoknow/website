@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0 3rem 0;
+}
+
+.link {
+  color: var(--ifm-font-color-base);
+  background: var(--docusaurus-secondary-color);
+  padding: 1rem 1.5rem;
+  display: block;
+  margin-right: 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--docusaurus-secondary-color);
+}
+
+.link:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+
+.all {
+  color: var(--ifm-font-color-base);
+  background: transparent;
+  padding: 1rem 1.5rem;
+  display: block;
+  margin-right: 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--docusaurus-secondary-color);
+}
+
+.all:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}

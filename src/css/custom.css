@@ -20,8 +20,11 @@
     Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-  --ifm-font-color-base: #00184d;
+  
+    --ifm-font-color-base: #00184d;
+  
   --docusaurus-tag-list-border: #626e8a;
+  --docusaurus-secondary-color: #14e8a7;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -33,6 +36,10 @@
   --ifm-color-primary-light: #16f1b3;
   --ifm-color-primary-lighter: #33f3bd;
   --ifm-color-primary-lightest: #50f5c8;
+  
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
   --ifm-font-color-base: #fff;
+
+  --docusaurus-secondary-color: #004fff;
 }
