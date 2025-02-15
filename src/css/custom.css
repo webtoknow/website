@@ -78,6 +78,7 @@ body:before {
 .navbar {
   margin: 1.5rem;
   border-radius: 1.5rem;
+  box-shadow: 0px 0px 22px 0px #083eb41c;
 }
 
 @media (max-width: 996px) {
