@@ -27,6 +27,7 @@
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
 
+  --ifm-color-secondary-lightest: #f4f7fc;
   --ifm-font-color-base: #00184d;
 
   --docusaurus-tag-list-border: #626e8a;
@@ -43,8 +44,12 @@
   --ifm-color-primary-lighter: #33f3bd;
   --ifm-color-primary-lightest: #50f5c8;
 
+  
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
+
+  --ifm-color-secondary-lightest: #2E2E2E;
   --ifm-font-color-base: #fff;
 
   --docusaurus-secondary-color: #004fff;
@@ -59,11 +64,13 @@ body:before {
   content: "";
   display: block;
   position: absolute;
-  height: 50vh;
-  background-image: url(./curve-header.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom center;
+  height: 60vh;
+  background-color: var(--ifm-color-secondary-lightest);
+  -webkit-mask-image: url(./curve-header-mask.svg);
+  mask-image: url(./curve-header-mask.svg);
+  mask-size: cover;
+  mask-position: bottom center;
+  mask-repeat: no-repeat;
   left: 0;
   right: 0;
   z-index: -1;
