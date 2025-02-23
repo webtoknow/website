@@ -8,30 +8,35 @@
 :root {
   --ifm-color-primary: #004fff;
   --ifm-color-primary-dark: #0044e5;
-  /* Slightly darker */
   --ifm-color-primary-darker: #003bcc;
-  /* Darker */
   --ifm-color-primary-darkest: #002999;
-  /* Darkest */
   --ifm-color-primary-light: #005bff;
-  /* Slightly lighter */
   --ifm-color-primary-lighter: #336fff;
-  /* Lighter */
   --ifm-color-primary-lightest: #6699ff;
-  /* Lightest */
-  --ifm-code-font-size: 95%;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-color-secondary-lightest: #f4f7fc;
+  --ifm-font-color-base: #00184d;
+
+  --docusaurus-secondary-color: #14e8a7;
+
+  --ifm-navbar-shadow: 0px 0px 22px 0px #083eb41c;
+
+  /* Variables without a corresponding value in the dark theme. */
+
+  --ifm-code-font-size: 95%;
 
   --ifm-font-family-base: "Urbanist", system-ui, -apple-system, Segoe UI, Roboto,
     Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
 
-  --ifm-color-secondary-lightest: #f4f7fc;
-  --ifm-font-color-base: #00184d;
+  --ifm-navbar-height: 80px;
+  --ifm-navbar-item-padding-horizontal: 1.5rem;
+  --ifm-navbar-padding-horizontal: 1.5rem;
 
   --docusaurus-tag-list-border: #626e8a;
-  --docusaurus-secondary-color: #14e8a7;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -44,18 +49,14 @@
   --ifm-color-primary-lighter: #33f3bd;
   --ifm-color-primary-lightest: #50f5c8;
 
-  
-
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-
-  --ifm-color-secondary-lightest: #2E2E2E;
+  --ifm-color-secondary-lightest: #2e2e2e;
   --ifm-font-color-base: #fff;
 
   --docusaurus-secondary-color: #004fff;
+  --ifm-navbar-shadow: 0px 0px 22px 0px #00000066;
 }
-
-
 
 /* Custom CSS */
 
@@ -64,7 +65,7 @@ body:before {
   content: "";
   display: block;
   position: absolute;
-  height: 60vh;
+  height: 650px;
   background-color: var(--ifm-color-secondary-lightest);
   -webkit-mask-image: url(./curve-header-mask.svg);
   mask-image: url(./curve-header-mask.svg);
@@ -76,21 +77,61 @@ body:before {
   z-index: -1;
 }
 
+body:has(a.navbar__link--active[href^="/projects"])::before {
+  display: none;
+  content: none;
+}
 
 /* Navbar */
 :root {
-  --ifm-navbar-height: 80px;
 }
 
 .navbar {
   margin: 1.5rem;
   border-radius: 1.5rem;
-  box-shadow: 0px 0px 22px 0px #083eb41c;
+}
+
+.navbar__link {
+  border: 2px solid var(--ifm-navbar-background-color);
+  border-radius: 1.5rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  border-color: var(--ifm-color-primary);
+}
+
+.navbar__link--active {
+  color: var(--ifm-navbar-link-color);
+}
+
+.navbar__title {
+  margin-left: 3.5rem;
+  padding: 0.25rem 1.5rem;
+  border-radius: 1.5rem;
+  border: 2px solid var(--ifm-navbar-background-color);
+}
+
+.navbar__title:hover {
+  border-color: var(--ifm-color-primary);
 }
 
 @media (max-width: 996px) {
   .navbar {
     margin: 0;
-    border-radius: none;
+    border-radius: initial;
+  }
+
+  .navbar__title {
+    margin-left: 0;
+    padding: 0.25rem 1rem;
+    border-radius: initial;
+    border: none;
+  }
+
+  .navbar__title:hover {
+    border: none;
   }
 }
