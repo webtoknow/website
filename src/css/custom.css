@@ -9,15 +9,15 @@
   --ifm-color-primary: #004fff;
   --ifm-color-primary-dark: #0044e5;
   --ifm-color-primary-darker: #003bcc;
-  --ifm-color-primary-darkest: #002999;
+  --ifm-color-primary-darkest: #00184d;
   --ifm-color-primary-light: #005bff;
   --ifm-color-primary-lighter: #336fff;
-  --ifm-color-primary-lightest: #6699ff;
+  --ifm-color-primary-lightest: #bcd0fe;
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   --ifm-color-secondary-lightest: #f4f7fc;
-  --ifm-font-color-base: #00184d;
+  --ifm-font-color-base: var(--ifm-color-primary-darkest);
 
   --docusaurus-secondary-color: #14e8a7;
 
@@ -37,6 +37,7 @@
   --ifm-navbar-padding-horizontal: 1.5rem;
 
   --docusaurus-tag-list-border: #626e8a;
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -44,7 +45,7 @@
   --ifm-color-primary: #14e8a7;
   --ifm-color-primary-dark: #12d196;
   --ifm-color-primary-darker: #10ba87;
-  --ifm-color-primary-darkest: #0d9f74;
+  --ifm-color-primary-darkest:  #0b7a61;
   --ifm-color-primary-light: #16f1b3;
   --ifm-color-primary-lighter: #33f3bd;
   --ifm-color-primary-lightest: #50f5c8;
@@ -131,4 +132,43 @@ body:has(a.navbar__link--active[href^="/projects"])::before {
   .navbar__title:hover {
     border: none;
   }
+}
+
+/* Footer */
+.footer {
+  padding-top: 0;
+  margin-top: 173px;
+  position: relative;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: var(--ifm-color-primary-darkest);
+  --ifm-footer-title-color: var(--ifm-color-primary-lightest);
+}
+
+footer:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 173px;
+  background-color: var(--ifm-color-primary-darkest);
+  -webkit-mask-image: url(./curve-footer-mask.svg);
+  mask-image: url(./curve-footer-mask.svg);
+  mask-size: cover;
+  mask-position: top center;
+  mask-repeat: no-repeat;
+  left: 0;
+  right: 0;
+  top: -173px;
+  z-index: -1;
+}
+
+.footer__title {
+  font-size: 1.5rem;
+  font-weight: extra-bold;
+}
+
+.footer__item {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
