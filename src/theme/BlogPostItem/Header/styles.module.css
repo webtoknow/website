@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 400px;
   grid-row: 3;
   margin-right: calc(-30% - 40px);
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
 }
 
 .image {
