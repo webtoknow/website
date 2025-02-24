@@ -37,7 +37,6 @@
   --ifm-navbar-padding-horizontal: 1.5rem;
 
   --docusaurus-tag-list-border: #626e8a;
-
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -45,7 +44,7 @@
   --ifm-color-primary: #14e8a7;
   --ifm-color-primary-dark: #12d196;
   --ifm-color-primary-darker: #10ba87;
-  --ifm-color-primary-darkest:  #0b7a61;
+  --ifm-color-primary-darkest: #0b7a61;
   --ifm-color-primary-light: #16f1b3;
   --ifm-color-primary-lighter: #33f3bd;
   --ifm-color-primary-lightest: #50f5c8;
@@ -162,14 +161,6 @@ footer:before {
   top: -172px;
   z-index: -1;
 }
-
-@media (min-width: 2561px) {
-  .footer:before {
-    height: 250px;
-    top: -249px;
-  }
-}
-
 .footer__title {
   font-size: 1.5rem;
   font-weight: extra-bold;
@@ -178,4 +169,15 @@ footer:before {
 .footer__item {
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+@media (min-width: 2561px) {
+  .footer {
+    margin-top: 249px;
+  }
+
+  .footer:before {
+    height: 250px;
+    top: -249px;
+  }
 }
