@@ -13,7 +13,6 @@ export default function BlogPostItems({
   const globalData = useGlobalData();
   const tags = globalData["docusaurus-plugin-content-blog"].default['allTags'];
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <>
       <h1>Articles</h1>
