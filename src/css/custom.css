@@ -67,8 +67,8 @@ body:before {
   position: absolute;
   height: 650px;
   background-color: var(--ifm-color-secondary-lightest);
-  -webkit-mask-image: url(./curve-header-mask.svg);
-  mask-image: url(./curve-header-mask.svg);
+  -webkit-mask-image: url(/img/curve-header-mask.svg);
+  mask-image: url(/img/curve-header-mask.svg);
   mask-size: cover;
   mask-position: bottom center;
   mask-repeat: no-repeat;
@@ -151,8 +151,8 @@ footer:before {
   position: absolute;
   height: 173px;
   background-color: var(--ifm-color-primary-darkest);
-  -webkit-mask-image: url(./curve-footer-mask.svg);
-  mask-image: url(./curve-footer-mask.svg);
+  -webkit-mask-image: url(/img/curve-footer-mask.svg);
+  mask-image: url(/img/curve-footer-mask.svg);
   mask-size: cover;
   mask-position: top center;
   mask-repeat: no-repeat;
