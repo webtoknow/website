@@ -3,10 +3,11 @@ import clsx from "clsx";
 import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import HomepageRecentPosts from "@site/src/components/HomepageRecentPosts";
 import Heading from "@theme/Heading";
 
 import styles from "./index.module.css";
+import Title from "../components/Title/Title";
 
 function HomepageHero() {
   const { siteConfig } = useDocusaurusContext();
@@ -167,7 +168,8 @@ export default function Home(): ReactNode {
     >
       <main className="container margin-vert--lg">
         <HomepageHero />
-        <HomepageFeatures />
+        <Title title="The latest" />
+        <HomepageRecentPosts />
       </main>
     </Layout>
   );

@@ -29,12 +29,12 @@ function useReadingTimePlural() {
   };
 }
 
-function ReadingTime({readingTime}: {readingTime: number}) {
+export function ReadingTime({readingTime}: {readingTime: number}) {
   const readingTimePlural = useReadingTimePlural();
   return <>{readingTimePlural(readingTime)}</>;
 }
 
-function DateTime({
+export function DateTime({
   date,
   formattedDate,
 }: {
@@ -44,11 +44,11 @@ function DateTime({
   return <time dateTime={date}>{formattedDate}</time>;
 }
 
-function Spacer() {
+export function Spacer() {
   return <>{' · '}</>;
 }
 
-function Authors ({authors}) {
+export function Authors ({authors}) {
   return (
     <>
       {authors.map((author, index) => {

@@ -2,6 +2,7 @@ import React, {type ReactNode} from 'react';
 import BlogPostItemHeaderTitle from '@theme/BlogPostItem/Header/Title';
 import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
 import BlogPostItemHeaderAuthors from '@theme/BlogPostItem/Header/Authors';
+import Image from "@theme/IdealImage";
 import { useBlogPost } from '@docusaurus/plugin-content-blog/lib/client/contexts.js';
 import clsx from 'clsx';
 
@@ -18,7 +19,7 @@ export default function BlogPostItemHeader(): ReactNode {
       <BlogPostItemHeaderTitle />
       <BlogPostItemHeaderInfo />
       {isBlogPostPage && <BlogPostItemHeaderAuthors />}
-      {isBlogPostPage && <img src={image} className={clsx(styles.image)} alt="Blog Image" />}
+      {isBlogPostPage && <Image img={image} alt={"post.title"} className={clsx(styles.image)} /> }
     </header>
   );
 }

@@ -54,6 +54,13 @@ const config: Config = {
 
   plugins: [
     [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 85,
+        disableInDev: false,
+      },
+    ],
+    [
       blogPluginEnhanced,
       {
         path: "blog",

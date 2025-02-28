@@ -20,7 +20,7 @@
   --ifm-font-color-base: var(--ifm-color-primary-darkest);
 
   --docusaurus-secondary-color: #14e8a7;
-
+  --docusaurus-grey-color: #626e8a;
   --ifm-navbar-shadow: 0px 0px 22px 0px #083eb41c;
 
   /* Variables without a corresponding value in the dark theme. */
@@ -55,6 +55,7 @@
   --ifm-font-color-base: #fff;
 
   --docusaurus-secondary-color: #004fff;
+  --docusaurus-grey-color: #c7cad4;
   --ifm-navbar-shadow: 0px 0px 22px 0px #00000066;
 }
 

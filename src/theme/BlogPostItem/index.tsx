@@ -5,6 +5,7 @@ import BlogPostItemContainer from '@theme/BlogPostItem/Container';
 import BlogPostItemHeader from '@theme/BlogPostItem/Header';
 import BlogPostItemContent from '@theme/BlogPostItem/Content';
 import BlogPostItemFooter from '@theme/BlogPostItem/Footer';
+import Image from "@theme/IdealImage";
 import type {Props} from '@theme/BlogPostItem';
 
 import styles from './styles.module.css';
@@ -27,7 +28,7 @@ export default function BlogPostItem({children, className}: Props): ReactNode {
 
   return (
     <BlogPostItemContainer className={clsx(containerClassName, className, !isBlogPostPage && styles.article)}>
-      {!isBlogPostPage && <img className={clsx(styles.image)} src={image} alt="blog post image" />}
+      {!isBlogPostPage && <Image img={image} alt={"post.title"} className={clsx(styles.image)} /> }
       <div>
         <BlogPostItemHeader />
         <BlogPostItemContent>{children}</BlogPostItemContent>

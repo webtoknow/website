@@ -1,0 +1,41 @@
+.article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.image {
+  height: 300px;
+  border-radius: 1.5rem;
+  margin-right: 2rem;
+}
+
+.info {
+  margin-bottom: 2rem;
+  color: var(--docusaurus-grey-color);
+}
+
+.description {
+  margin: 0 0 0.5rem 0;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.link {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--ifm-font-color-base);
+}
+
+@media (max-width: 996px) {
+  .image {
+    display: none;
+  }
+}

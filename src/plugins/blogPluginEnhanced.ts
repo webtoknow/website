@@ -26,8 +26,14 @@ export default async function blogPluginEnhanced(
           permalink: post.metadata.permalink,
           tags: post.metadata.tags,
           readingTime: post.metadata.readingTime,
-          authors: post.metadata.authors,
+          authors: post.metadata.authors.map((author) => ({
+            name: author.name,
+            key: author.key,
+            permalink: author.page.permalink,
+            page: author.page,
+          })),
           description: post.metadata.description,
+          image: post.metadata.frontMatter.image,
         }));
 
       const { setGlobalData } = actions;

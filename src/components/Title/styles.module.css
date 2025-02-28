@@ -1,0 +1,19 @@
+.title {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 6rem 0 4rem 0;
+}
+
+.title::after {
+  content: "";
+  flex-grow: 1;
+  border-bottom: 4px dotted var(--ifm-font-color-base);
+  margin-left: 20px;
+}
+
+@media (max-width: 996px) {
+  .title {
+    margin: 0 0 2rem 0;
+  }
+}
