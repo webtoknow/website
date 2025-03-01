@@ -26,11 +26,6 @@
   grid-row: 1;
 }
 
-.heroMark {
-  background: none;
-  color: var(--ifm-color-primary);
-}
-
 @media screen and (max-width: 996px) {
   .heroImage {
     display: none;
@@ -48,7 +43,6 @@
   }
 }
 
-[data-theme="dark"] .heroImage [fill="#004fff"] {
+[data-theme='dark'] .heroImage [fill='#004fff'] {
   fill: #14e8a7;
 }
-

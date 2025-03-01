@@ -1,6 +1,31 @@
 import type { ReactNode } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import Heading from "@theme/Heading";
+import clsx from "clsx";
+import { useColorMode } from "@docusaurus/theme-common";
+import { DocusaurusConfig } from "@docusaurus/types";
+
+import AboutSvg from './undraw-about.svg';
+
+import styles from "./index.module.css";
+
+interface AboutHeroProps {
+  siteConfig: DocusaurusConfig;
+}
+
+function AboutHero({ siteConfig }: AboutHeroProps) {
+  const { colorMode } = useColorMode();
+
+  return (
+    <section className={clsx(styles.heroBanner)}>
+      <Heading as="h1" className={clsx(styles.heroTitle)}>
+        About us
+      </Heading>
+      <AboutSvg className={clsx(styles.heroImage)} />
+    </section>
+  );
+}
 
 export default function About(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
@@ -9,8 +34,8 @@ export default function About(): ReactNode {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
-      <main>
-        <h1> About us </h1>
+      <main className="container margin-vert--lg">
+        <AboutHero siteConfig={siteConfig} />
         <p>
           At Webtoknow, we're dedicated to delivering the latest updates on web
           technologies, IOT, security, and IT jobs. Our blog is your go-to
