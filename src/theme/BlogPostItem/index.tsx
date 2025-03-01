@@ -22,13 +22,15 @@ export default function BlogPostItem({children, className}: Props): ReactNode {
   const {
     isBlogPostPage,
     metadata: {
+      title: postTitle,
       frontMatter: { image },
     },
   } = useBlogPost();
 
+
   return (
     <BlogPostItemContainer className={clsx(containerClassName, className, !isBlogPostPage && styles.article)}>
-      {!isBlogPostPage && <Image img={image} alt={"post.title"} className={clsx(styles.image)} /> }
+      {!isBlogPostPage && <Image img={image} alt={postTitle} className={clsx(styles.image)} /> }
       <div>
         <BlogPostItemHeader />
         <BlogPostItemContent>{children}</BlogPostItemContent>

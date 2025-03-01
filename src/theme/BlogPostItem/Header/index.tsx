@@ -12,6 +12,7 @@ import styles from './styles.module.css';
 export default function BlogPostItemHeader(): ReactNode {
    const {isBlogPostPage,  metadata: {
     frontMatter: { image },
+    title: postTitle,
   },} = useBlogPost();
 
   return (
@@ -19,7 +20,7 @@ export default function BlogPostItemHeader(): ReactNode {
       <BlogPostItemHeaderTitle />
       <BlogPostItemHeaderInfo />
       {isBlogPostPage && <BlogPostItemHeaderAuthors />}
-      {isBlogPostPage && <Image img={image} alt={"post.title"} className={clsx(styles.image)} /> }
+      {isBlogPostPage && <Image img={image} alt={postTitle} className={clsx(styles.image)} /> }
     </header>
   );
 }
