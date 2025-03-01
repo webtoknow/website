@@ -83,6 +83,10 @@ body:has(a.navbar__link--active[href^="/projects"])::before {
   content: none;
 }
 
+body:has(a.navbar__link--active[href^="/blog"])::before {
+  height: 650px;
+}
+
 /* Navbar */
 .navbar {
   margin: 1.5rem;
@@ -181,4 +185,10 @@ footer:before {
     height: 250px;
     top: -249px;
   }
+}
+
+
+.blogPostItemHeaderTitle {
+  font-size: 2rem;
+  color: red;
 }

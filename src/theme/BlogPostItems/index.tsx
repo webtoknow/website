@@ -1,5 +1,5 @@
 import React, { type ReactNode } from "react";
-import { BlogPostProvider } from "@docusaurus/plugin-content-blog/client";
+import { BlogPostProvider, useBlogPost } from "@docusaurus/plugin-content-blog/client";
 import { useLocation } from "@docusaurus/router";
 import useGlobalData from "@docusaurus/useGlobalData";
 import BlogPostItem from "@theme/BlogPostItem";
@@ -16,6 +16,7 @@ export default function BlogPostItems({
   const globalData = useGlobalData();
   const tags = globalData["docusaurus-plugin-content-blog"].default["allTags"];
   const { pathname } = useLocation();
+  const isBlogPostPage = pathname !== "/blog";
   return (
     <>
       <section aria-labelledby="articles-heading">
@@ -23,7 +24,7 @@ export default function BlogPostItems({
         <p className={clsx(styles.no)}>{items.length} articles</p>
       </section>
 
-      <TagsList tags={tags} path={pathname} />
+      <TagsList tags={tags} showAllArticles={isBlogPostPage} />
 
       {items.map(({ content: BlogPostContent }) => (
         <BlogPostProvider

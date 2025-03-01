@@ -9,22 +9,22 @@ interface Tag {
   label: string;
   permalink: string;
   description: string;
-  items: string[];
-  unlisted: boolean;
 }
 
 interface TagsListProps {
   tags: Tag[];
-  path: string;
+  size?: "sm" | "md";
+  showAllArticles?: boolean;
+  className?: string;
 }
 
-const TagsList: React.FC<TagsListProps> = ({ tags, path }) => {
+const TagsList: React.FC<TagsListProps> = ({ tags, showAllArticles, size = 'md', className }) => {
   return (
-    <section className={clsx(styles.wrapper)}>
+    <section className={clsx(styles.wrapper, className)}>
       {tags.map((tag, index) => (
         <Link
           key={index}
-          className={clsx(styles.link)}
+          className={clsx(styles.link, size === 'sm' && styles.linkSmall )}
           to={tag.permalink}
           title={tag.description}
         >
@@ -32,8 +32,8 @@ const TagsList: React.FC<TagsListProps> = ({ tags, path }) => {
         </Link>
       ))}
 
-      {path !== "/blog" && (
-        <Link className={clsx(styles.all)} to="/blog" title="Go to blog page">
+      {showAllArticles && (
+        <Link className={clsx(styles.all, size === 'sm' && styles.allSmall )} to="/blog" title="Go to blog page">
           See all articles
         </Link>
       )}
