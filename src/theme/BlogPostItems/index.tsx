@@ -6,16 +6,22 @@ import BlogPostItem from "@theme/BlogPostItem";
 import type { Props } from "@theme/BlogPostItems";
 import TagsList from "@site/src/components/TagsList";
 
+import styles from './styles.module.css';
+import clsx from "clsx";
+
 export default function BlogPostItems({
   items,
   component: BlogPostItemComponent = BlogPostItem,
 }: Props): ReactNode {
   const globalData = useGlobalData();
-  const tags = globalData["docusaurus-plugin-content-blog"].default['allTags'];
+  const tags = globalData["docusaurus-plugin-content-blog"].default["allTags"];
   const { pathname } = useLocation();
   return (
     <>
-      <h1>Articles</h1>
+      <section aria-labelledby="articles-heading">
+        <h1 className={clsx(styles.title)} id="articles-heading">Articles</h1>
+        <p className={clsx(styles.no)}>{items.length} articles</p>
+      </section>
 
       <TagsList tags={tags} path={pathname} />
 
