@@ -48,11 +48,12 @@ export default function About(): ReactNode {
             <h2 className={clsx(styles.title)}>01. Our mission</h2>
             <p className={clsx(styles.text)}>
               At Webtoknow, we're dedicated to delivering the latest updates on
-              web technologies, IOT, security, and IT jobs. Our blog is your go-to
-              source for in-depth tutorials and informative articles designed to
-              enrich your knowledge in these areas. Our mission is to deliver
-              high-quality, informative content that empowers our audience to
-              navigate the ever-evolving world of technology with confidence.{" "}
+              web technologies, IOT, security, and IT jobs. Our blog is your
+              go-to source for in-depth tutorials and informative articles
+              designed to enrich your knowledge in these areas. Our mission is
+              to deliver high-quality, informative content that empowers our
+              audience to navigate the ever-evolving world of technology with
+              confidence.{" "}
             </p>
           </section>
         </article>
@@ -82,10 +83,10 @@ export default function About(): ReactNode {
             <h2 className={clsx(styles.title)}>03. IOT and security</h2>
             <p className={clsx(styles.text)}>
               We provide comprehensive tutorials on setting up and utilizing IOT
-              devices, including renowned platforms like Raspberry Pi and Arduino.
-              Our blog also delves into various security topics, offering valuable
-              insights and the latest cybersecurity developments to help safeguard
-              your online presence.
+              devices, including renowned platforms like Raspberry Pi and
+              Arduino. Our blog also delves into various security topics,
+              offering valuable insights and the latest cybersecurity
+              developments to help safeguard your online presence.
             </p>
           </section>
         </article>
@@ -99,11 +100,17 @@ export default function About(): ReactNode {
             <h2 className={clsx(styles.title)}>04. Job Market</h2>
             <p className={clsx(styles.text)}>
               We offer a dedicated IT jobs section offers insights into the
-              current job market landscape, featuring the latest job openings and
-              providing valuable tips for job seekers.
+              current job market landscape, featuring the latest job openings
+              and providing valuable tips for job seekers.
             </p>
           </section>
         </article>
+
+        <blockquote className={clsx(styles.blockquote)}>
+          Join us as we explore the exciting realms of web technologies, IoT,
+          security, and IT jobs, and learn together about the topics we care
+          about every day.
+        </blockquote>
 
         <h2>Team</h2>
 
