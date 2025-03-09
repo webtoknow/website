@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #004fff;
+  --ifm-color-primary: rgb(0, 79, 255);
   --ifm-color-primary-dark: #0044e5;
   --ifm-color-primary-darker: #003bcc;
   --ifm-color-primary-darkest: #00184d;
@@ -120,6 +120,14 @@ body:has(a.navbar__link--active[href^="/blog"])::before {
 
 .navbar__title:hover {
   border-color: var(--ifm-color-primary);
+}
+
+.navbar__logo > img {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(94%) saturate(4941%) hue-rotate(225deg) brightness(106%) contrast(103%);
+}
+
+[data-theme="dark"] .navbar__logo > img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(87%) saturate(443%) hue-rotate(98deg) brightness(93%) contrast(96%);
 }
 
 @media (max-width: 996px) {
