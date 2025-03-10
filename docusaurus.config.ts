@@ -54,7 +54,7 @@ const config: Config = {
 
   plugins: [
     [
-      '@docusaurus/plugin-ideal-image',
+      "@docusaurus/plugin-ideal-image",
       {
         quality: 85,
         disableInDev: false,
@@ -95,12 +95,12 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "Home",
       logo: {
         alt: "Web to know logo",
         src: "img/logo.svg",
       },
       items: [
+        { to: "/", label: "Home", position: "left", exact: true },
         {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
