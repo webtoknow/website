@@ -205,7 +205,6 @@ footer:before {
   }
 }
 
-.blogPostItemHeaderTitle {
-  font-size: 2rem;
-  color: red;
+.about-page {
+  overflow: hidden;
 }

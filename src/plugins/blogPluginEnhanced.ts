@@ -17,6 +17,7 @@ export default async function blogPluginEnhanced(
     async contentLoaded({ content, actions }) {
       await blogPluginInstance.contentLoaded({ content, actions });
 
+      console.log("Content:", content);
       const recentPostsLimit = 3;
       const recentPosts = content["blogPosts"]
         .filter((_, index) => index < recentPostsLimit)
@@ -37,14 +38,42 @@ export default async function blogPluginEnhanced(
         }));
 
       const { setGlobalData } = actions;
-      const { blogTags } = content as unknown as { blogTags: Record<string, { label: string; permalink: string; description: string }> };
-      const allTags = Object.values(blogTags).map(({ label, permalink, description }) => ({
-        label,
-        permalink,
-        description,
+      const { blogTags } = content as unknown as {
+        blogTags: Record<
+          string,
+          { label: string; permalink: string; description: string }
+        >;
+      };
+      const allTags = Object.values(blogTags).map(
+        ({ label, permalink, description }) => ({
+          label,
+          permalink,
+          description,
+        })
+      );
+
+      const { authorsMap } = content as unknown as {
+        authorsMap: Record<
+          string,
+          {
+            name: string;
+            title: string;
+            description: string;
+            url: string;
+            imageURL: string;
+          }
+        >;
+      };
+
+      const authors = Object.entries(authorsMap).map(([key, author]) => ({
+        key,
+        name: author.name,
+        description: author.description,
+        url: author.url,
+        imageURL: author.imageURL
       }));
 
-      setGlobalData({ allTags, recentPosts });
+      setGlobalData({ allTags, recentPosts, authors });
     },
   };
 }

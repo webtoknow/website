@@ -1,6 +1,7 @@
 bogminic:
   name: Bogdan Mihai Nicolae
   title: Software Engineer @ Computacenter
+  description: Hi there 👋, I'm Bogdan, an engineer with experience across multiple industries and a passion for building secure, user-friendly applications. Currently, I focus on JavaScript and Java projects in the cloud and work on a CSS game designed to help developers learn basic CSS properties. I'm also passionate about sharing knowledge and mentoring students in one of Europe's top fintech programs, the Master's in Financial Computing in Bucharest. Check it out! 😊
   url: https://bogminic.com
   image_url: https://github.com/bogminic.png
   page: true
@@ -12,6 +13,7 @@ bogminic:
 damun:
   name: Dana Maria Nicolae
   title: Software Engineer @ Deutsche Bank
+  description: 👋 Hi, I'm Dana and I'm a skilled software engineer and instructor with expertise in web technologies and frameworks such as HTML, CSS, JavaScript, SQL, Angular, AngularJS, Java, and Spring. Being passionate about mathematics, I have dedicated my spare time to complete some Machine Learning courses in Python and am eager to apply this knowledge in the near future. I enjoy sharing my knowledge and experience with others to help them enhance their skills. In my leisure time I love hiking and dancing with my 2 little kids. 🌟
   url: https://damun.eu
   image_url: https://github.com/danamunteanu.png
   page: true

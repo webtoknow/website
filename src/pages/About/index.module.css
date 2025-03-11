@@ -92,6 +92,45 @@
   margin: 0;
 }
 
+.blockquote {
+  border: 0;
+  padding: 4rem;
+  color: #fff;
+  position: relative;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.blockquote:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(-1 * (50lvw - 50%));
+  right: calc(-1 * (50lvw - 50%));
+  background: var(--ifm-color-primary-darkest);
+  z-index: -1;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.authorImage {
+  height: 300px;
+  border-radius: 1.5rem;
+  margin-right: 2rem;
+}
+
+.authorName {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 996px) {
   .heroImage {
     display: none;
