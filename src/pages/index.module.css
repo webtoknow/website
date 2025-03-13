@@ -40,12 +40,15 @@
     grid-template-columns: 1fr;
     justify-content: center;
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: 2rem;
   }
 
   .heroTitle {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     font-size: 2.5rem;
+    text-align: left;
   }
 }
 
