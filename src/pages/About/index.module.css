@@ -140,11 +140,34 @@
     grid-template-columns: 1fr;
     justify-content: center;
     text-align: center;
+    padding-bottom: 2rem;
   }
 
   .heroTitle {
     margin-bottom: 2rem;
     font-size: 2.5rem;
+  }
+
+  .iconWrapper {
+    display: none;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    margin-bottom: 4rem;
+  }
+
+  .author {
+    margin-top: 2rem;
+  }
+
+  .authorImage {
+    display: none;
+  }
+
+  .blockquote {
+    display: none;
   }
 }
 

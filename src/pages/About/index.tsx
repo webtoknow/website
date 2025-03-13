@@ -128,7 +128,7 @@ function TeamSection() {
             alt={`Photo of ${author.name}`}
           />
           <div>
-            <h2 className={clsx(styles.authorName)}>{author.name}</h2>
+            <h3 className={clsx(styles.authorName)}>{author.name}</h3>
             <p className={clsx(styles.authorDescription)}>
               {author.description}
             </p>
