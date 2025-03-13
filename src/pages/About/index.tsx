@@ -116,7 +116,6 @@ function TeamSection() {
   const globalData = useGlobalData();
   const authors: Author[] =
     globalData["docusaurus-plugin-content-blog"].default["authors"];
-  console.log(authors);
   return (
     <section>
       <Title title="Meet the team" />

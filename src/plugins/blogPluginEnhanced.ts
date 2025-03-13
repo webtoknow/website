@@ -17,7 +17,6 @@ export default async function blogPluginEnhanced(
     async contentLoaded({ content, actions }) {
       await blogPluginInstance.contentLoaded({ content, actions });
 
-      console.log("Content:", content);
       const recentPostsLimit = 3;
       const recentPosts = content["blogPosts"]
         .filter((_, index) => index < recentPostsLimit)
