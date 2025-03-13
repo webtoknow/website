@@ -101,13 +101,14 @@ const config: Config = {
       },
       items: [
         { to: "/", label: "Home", position: "left", exact: true },
+        { to: "/blog", label: "Blog", position: "left" },
         {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "Projects",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+
         { to: "/about", label: "About us", position: "left" },
         {
           href: "https://github.com/webtoknow/website",
