@@ -11,20 +11,21 @@ interface Tag {
   description: string;
 }
 
-interface TagsListProps {
+interface TagsNavProps {
   tags: Tag[];
   size?: "sm" | "md";
   showAllArticles?: boolean;
   className?: string;
+  pathname?: string;
 }
 
-const TagsList: React.FC<TagsListProps> = ({ tags, showAllArticles, size = 'md', className }) => {
+const TagsNav: React.FC<TagsNavProps> = ({ tags, showAllArticles, size = 'md', className, pathname }) => {
   return (
     <section className={clsx(styles.wrapper, className)}>
       {tags.map((tag, index) => (
         <Link
           key={index}
-          className={clsx(styles.link, size === 'sm' && styles.linkSmall )}
+          className={clsx(styles.link, size === 'sm' && styles.linkSmall,  pathname === tag.permalink && styles.active )}
           to={tag.permalink}
           title={tag.description}
         >
@@ -41,4 +42,4 @@ const TagsList: React.FC<TagsListProps> = ({ tags, showAllArticles, size = 'md',
   );
 };
 
-export default TagsList;
+export default TagsNav;

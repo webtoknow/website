@@ -11,7 +11,8 @@ import styles from './styles.module.css';
 export default function BlogLayout(props: Props): ReactNode {
   const { sidebar, toc, children, ...layoutProps } = props;
   const { pathname } = useLocation();
-  const isBlogPostDetailsPage = pathname.includes("/blog/");
+  // const isBlogPostDetailsPage = pathname.includes("/blog/");
+  const isBlogPostDetailsPage: boolean = /^\/blog\/[^/]+$/.test(pathname);
 
   return (
     <Layout {...layoutProps}>
@@ -20,8 +21,8 @@ export default function BlogLayout(props: Props): ReactNode {
           <BlogSidebar sidebar={sidebar} />
           <main
             className={clsx("col", {
-              "col--12": !isBlogPostDetailsPage,
               "col--9": isBlogPostDetailsPage,
+              "col--12": !isBlogPostDetailsPage,
             })}
           >
             {children}

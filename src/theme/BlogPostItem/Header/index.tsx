@@ -7,7 +7,7 @@ import { useBlogPost } from "@docusaurus/plugin-content-blog/lib/client/contexts
 import clsx from "clsx";
 
 import styles from "./styles.module.css";
-import TagsList from "@site/src/components/TagsList";
+import TagsNav from "@site/src/components/TagsNav";
 
 export default function BlogPostItemHeader(): ReactNode {
   const {
@@ -24,11 +24,11 @@ export default function BlogPostItemHeader(): ReactNode {
       <section className={clsx(styles.info)}>
         <BlogPostItemHeaderTitle />
         {isBlogPostPage && (
-          <TagsList
+          <TagsNav
             className={clsx(styles.tagList)}
             tags={tagsList}
             size="sm"
-          ></TagsList>
+          ></TagsNav>
         )}
         <BlogPostItemHeaderInfo className={clsx(styles.date)} />
         {isBlogPostPage && <BlogPostItemHeaderAuthors />}

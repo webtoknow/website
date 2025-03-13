@@ -38,6 +38,9 @@
   --ifm-navbar-padding-horizontal: 1.5rem;
 
   --docusaurus-tag-list-border: #626e8a;
+
+  --ifm-hr-height: 4px;
+  --ifm-hr-background-color: transparent;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -207,4 +210,9 @@ footer:before {
 
 .about-page {
   overflow: hidden;
+}
+
+hr {
+  border: none;
+  border-top: 4px dotted var(--ifm-font-color-base)
 }

@@ -52,3 +52,13 @@
   text-decoration: none;
   border: 2px solid var(--ifm-color-primary);
 }
+
+.active {
+  color: var(--ifm-color-primary-contrast-background);
+  background: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
+}
+
+.active:hover {
+  color: var(--docusaurus-secondary-color);
+}

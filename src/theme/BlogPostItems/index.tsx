@@ -4,7 +4,7 @@ import { useLocation } from "@docusaurus/router";
 import useGlobalData from "@docusaurus/useGlobalData";
 import BlogPostItem from "@theme/BlogPostItem";
 import type { Props } from "@theme/BlogPostItems";
-import TagsList from "@site/src/components/TagsList";
+import TagsNav from "@site/src/components/TagsNav";
 
 import styles from './styles.module.css';
 import clsx from "clsx";
@@ -16,7 +16,8 @@ export default function BlogPostItems({
   const globalData = useGlobalData();
   const tags = globalData["docusaurus-plugin-content-blog"].default["allTags"];
   const { pathname } = useLocation();
-  const isBlogPostPage = pathname !== "/blog";
+  const isBlogTagsPage: boolean = /^\/blog\/tags\/.+$/.test(pathname);
+  const isBlogPostListOrTagsPage: boolean = /^\/blog(\/tags\/.*)?$/.test(pathname);
   return (
     <>
       <section aria-labelledby="articles-heading">
@@ -24,7 +25,7 @@ export default function BlogPostItems({
         <p className={clsx(styles.no)}>{items.length} articles</p>
       </section>
 
-      <TagsList tags={tags} showAllArticles={isBlogPostPage} />
+      {isBlogPostListOrTagsPage && <TagsNav tags={tags} showAllArticles={isBlogTagsPage} pathname={pathname} />}
 
       {items.map(({ content: BlogPostContent }) => (
         <BlogPostProvider
