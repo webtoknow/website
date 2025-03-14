@@ -27,3 +27,8 @@ ai:
   label: Artificial Intelligence
   permalink: /artificial-intelligence
   description: Artificial Intelligence covers machine learning, automation, and AI innovations.
+
+raspberryPi:
+  label: Raspberry Pi
+  permalink: /raspberry-pi
+  description: Raspberry Pi projects, tutorials, and tips for the Raspberry Pi.
