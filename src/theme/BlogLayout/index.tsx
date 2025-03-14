@@ -11,8 +11,7 @@ import styles from './styles.module.css';
 export default function BlogLayout(props: Props): ReactNode {
   const { sidebar, toc, children, ...layoutProps } = props;
   const { pathname } = useLocation();
-  // const isBlogPostDetailsPage = pathname.includes("/blog/");
-  const isBlogPostDetailsPage: boolean = /^\/blog\/[^/]+$/.test(pathname);
+  const isBlogPostDetailsPage: boolean = /^\/blog\/(?!tags\/?)[^/]+$/.test(pathname);
 
   return (
     <Layout {...layoutProps}>

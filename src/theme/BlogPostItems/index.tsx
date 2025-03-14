@@ -25,7 +25,7 @@ export default function BlogPostItems({
         <p className={clsx(styles.no)}>{items.length} articles</p>
       </section>
 
-      {isBlogPostListOrTagsPage && <TagsNav tags={tags} showAllArticles={isBlogTagsPage} pathname={pathname} />}
+      {isBlogPostListOrTagsPage && <TagsNav tags={tags} showAllArticles={isBlogTagsPage} showAllTags={isBlogTagsPage} pathname={pathname} />}
 
       {items.map(({ content: BlogPostContent }) => (
         <BlogPostProvider
