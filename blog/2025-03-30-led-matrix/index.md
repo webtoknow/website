@@ -73,8 +73,8 @@ For more details on SSH and Raspberry Pi, check the official documentation:
 Now that we have access, it's time to update the OS to ensure we have the latest software and security updates. Run the following commands:
 
 ```bash
-sudo apt update  
-sudo apt full-upgrade -y  
+sudo apt update
+sudo apt full-upgrade -y
 ```
 
 For more information on updating Raspberry Pi OS, visit the official guide:  
@@ -86,28 +86,24 @@ Once the update is complete, we can move on to installing the necessary librarie
 
 When using the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) library, the built-in sound module can cause compatibility nightmares. By silencing this pesky module, you'll ensure your 32x32 LED matrix runs smoother than a jazz performance! 🎵
 
-#### The Blacklist Method
+Open the blacklist configuration:
 
-1. Open the blacklist configuration:
+```bash
+sudo nano /etc/modprobe.d/raspi-blacklist.conf
+```
 
-   ```bash
-   sudo nano /etc/modprobe.d/raspi-blacklist.conf
-   ```
+Add this magical line to banish sound:
 
-2. Add this magical line to banish sound:
+```text
+blacklist snd_bcm2835
+```
 
-   ```text
-   blacklist snd_bcm2835
-   ```
+Update and reboot:
 
-3. Update and reboot:
-
-   ```bash
-   sudo update-initramfs -u
-   sudo reboot
-   ```
-
-#### Verification
+```bash
+sudo update-initramfs -u
+sudo reboot
+```
 
 After rebooting, confirm the sound module is gone:
 
@@ -148,6 +144,8 @@ sudo examples-api-use/demo -D0 --led-gpio-mapping=adafruit-hat-pwm
 
 You should see a colorful rotating square, along with color transitions, geometric shapes, and wavy patterns, demonstrating the LED matrix's capabilities. 🚀🌈
 
+Press `<CTRL-C>` to exit and reset LEDs.
+
 For more details, visit the official GitHub repository:
 [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix?tab=readme-ov-file#lets-do-it)
 
@@ -167,8 +165,19 @@ Over the years, I have come across several great sources for animated GIF files 
 For this tutorial, we will download a collection of GIFs from [Ledpixelart](ledpixelart.com/art/)  and organize them for easy access. To do this, run the following command to download and extract the images:
 
 ```bash
-wget https://ledpixelart.com/wp-content/uploads/2017/09/pixel-all-art.zip
-unzip pixel-all-art.zip -d /home/pi/gifs
+wget https://ledpixelart.com/wp-content/uploads/2017/09/pixel-all-art.zip && unzip pixel-all-art.zip -d /home/pi/gifs && rm pixel-all-art.zip
+```
+
+To verify that the images have been downloaded and renamed correctly, you can use the following command to display one of the GIFs on the LED matrix. The animation should show a steam train moving across the screen:
+
+```bash
+sudo /home/pi/rpi-rgb-led-matrix/utils/led-image-viewer -f -s --led-gpio-mapping=adafruit-hat-pwm --led-cols=32 --led-rows=32 --led-brightness=45 /home/pi/gifs/ITEM0050.GIF
+```
+
+To streamline the process of generating the animation data stream, first remove the corrupted images (62, 63, and __MACOSX folder):
+
+```bash
+rm -rf /home/pi/gifs/ITEM0062.GIF /home/pi/gifs/ITEM0063.GIF /home/pi/gifs/__MACOSX/
 ```
 
 Next, to make it easier to change animations from the command line, we will rename all the GIF files sequentially:
@@ -184,24 +193,12 @@ This is necessary because, in Node-RED, we want to parameterize the command that
 /home/pi/gifs/${random}.gif
 ```
 
-To verify that the images have been downloaded and renamed correctly, you can use the following command to display one of the GIFs on the LED matrix. The animation should show a steam train moving across the screen:
-
-```bash
-sudo /home/pi/rpi-rgb-led-matrix/utils/led-image-viewer -f -s --led-gpio-mapping=adafruit-hat-pwm --led-cols=32 --led-rows=32 --led-brightness=45 /home/pi/gifs/50.gif
-```
-
-To streamline the process of generating the animation data stream, first remove the corrupted images (62, 63, and 104), then rerun the renaming command:
-
-```bash
-rm -rf /home/pi/gifs/62.gif /home/pi/gifs/63.gif /home/pi/gifs/104.gif
-ls -v | cat -n | while read n f; do mv -n "$f" "$n.gif"; done
-```
-
 #### Converting GIFs to Stream
 
 To generate the animation stream, first convert the GIF files into the stream format. Run the following command to process the GIFs and create the stream file. The conversion time will vary depending on the number of images in the GIF folder—in our case, there are approximately 100 GIFs:
 
 ```bash
+cd /home/pi
 sudo /home/pi/rpi-rgb-led-matrix/utils/led-image-viewer --led-gpio-mapping=adafruit-hat-pwm --led-cols=32 --led-rows=32 --led-brightness=45 -w0.016667 /home/pi/gifs/*.gif -Oanimation-out.stream
 ```
 
@@ -236,12 +233,72 @@ make
 
 After compiling the Adafruit PixelDust library, you can test it to ensure everything is working correctly:
 
+```bash
+sudo /home/pi/Adafruit_PixelDust/raspberry_pi/demo2-hourglass -f -s --led-gpio-mapping=adafruit-hat-pwm --led-cols=32 --led-rows=32 --led-brightness=45
+```
 
+### Installing Node-RED on Raspberry Pi
 
-### Nodered
+Node-RED is a powerful flow-based development tool for visual programming, especially useful for IoT projects and Raspberry Pi enthusiasts.
 
+#### Run the official Node-RED installation script
+
+This script installs Node.js (if needed), Node-RED, and sets up the system to run it as a service:
+
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+```
+
+The script will:
+
+- Remove old versions of Node-RED and Node.js
+- Install the recommended version of Node.js
+- Install the latest version of Node-RED
+- Install and configure it to run as a systemd service (autostart on boot)
+
+> **Note**: The script will ask for confirmation before proceeding with the installation. Press `Y` when prompted.
+
+For more detailed information, you can visit the official [Node-RED Raspberry Pi documentation](https://nodered.org/docs/getting-started/raspberrypi).
+
+#### Start Node-RED
+
+Once installed, you can start Node-RED with:
+
+```bash
+node-red-start
+```
+
+To stop it:
+
+```bash
+node-red-stop
+```
+
+To enable Node-RED to start automatically on boot:
+
+```bash
+sudo systemctl enable nodered.service
+```
+
+#### Importing the Flow
+
+Once Node-RED is installed and running on your Raspberry Pi, you can easily import a ready-made flow to handle the button interactions and control the LED matrix.
+
+Open a browser and go to:
 
 ```
+http://matrix.local:1880
+```
+
+1. In the Node-RED editor, click the ☰ menu (top right).
+2. Choose **Import** → **Clipboard**.
+3. Paste the JSON content from the section below into the text box.
+4. Click **Import**.
+5. You should now see a new flow with all nodes configured.
+
+<details>
+<summary>Click to expand the flow JSON</summary>
+```JSON
 [
     {
         "id": "ccc8162785086225",
@@ -837,4 +894,6 @@ After compiling the Adafruit PixelDust library, you can test it to ensure everyt
     }
 ]
 ```
+</details>
 
+> 💡 You can move the nodes around for better organization or change the shell commands to suit your animations and messages.
