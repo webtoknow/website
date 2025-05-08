@@ -280,7 +280,7 @@ To enable Node-RED to start automatically on boot:
 sudo systemctl enable nodered.service
 ```
 
-#### Importing the Flow
+##### Importing the Flow
 
 Once Node-RED is installed and running on your Raspberry Pi, you can easily import a ready-made flow to handle the button interactions and control the LED matrix.
 
@@ -896,4 +896,63 @@ http://matrix.local:1880
 ```
 </details>
 
-> 💡 You can move the nodes around for better organization or change the shell commands to suit your animations and messages.
+##### Overview
+
+The Node-RED flow is titled **"Matrix"** and provides:
+- Animated and text display capabilities
+- Button-based interaction with multiple event types
+- System control (e.g., shutdown, process termination)
+- GPIO feedback via output pin
+
+###### Button Input (GPIO 25)
+
+A single button connected to GPIO 25 is configured to detect different types of presses using a `button-events` node. Here's what each event triggers:
+
+| Event Type                | Action                                    |
+|--------------------------|-------------------------------------------|
+| Clicked                  | Display a random GIF                      |
+| Double Clicked           | Toggle between snow and hourglass effects|
+| Triple Clicked           | Play an animated GIF stream               |
+| Quadruple Clicked        | Display a rocket GIF                      |
+| Pressed                  | Display bubbles GIF                       |
+| Clicked + Pressed        | Shutdown the Raspberry Pi                 |
+| Double Clicked + Pressed | Scroll custom text on the matrix          |
+
+##### Animation Display
+
+GIFs and effects are executed via `exec` nodes using the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) utilities. These include:
+
+- `led-image-viewer` for static and animated GIFs
+- `text-scroller` for displaying custom messages
+
+#### Random GIF
+A `function` node randomly selects a `.gif` from `/home/pi/gifs/1.gif` to `/278.gif`.
+
+```js
+let random = randomInt(1, 278);
+msg.payload = `sudo ... /gifs/${random}.gif`;
+```
+
+##### Text Message Example
+Displays `"Hi Damian! ♥ ☺ ☼"` in red using `text-scroller`.
+
+##### Startup & Shutdown
+*Startup GIF*: A random GIF is triggered automatically on boot using an inject node.
+*Shutdown*: System shutdown is handled by a `exec` node running `sudo shutdown -h now`.
+
+##### GPIO Feedback
+A brief `300ms` `GPIO 14` pulse is triggered during execution using a trigger node, which could be connected to an LED or buzzer for feedback.
+
+##### Node-RED Node Types Used
+
+The flow utilizes a range of Node-RED nodes to handle hardware interactions, logic, and system control:
+
+- **`rpi-gpio in` / `rpi-gpio out`**: Handles button input and GPIO output pulses.
+- **`button-events`**: Detects multiple press patterns including clicks, holds, and combos.
+- **`inject`**: Used for startup triggers and manual testing.
+- **`exec`**: Executes system-level commands like showing GIFs, scrolling text, or shutting down.
+- **`change`**: Modifies messages to contain the appropriate shell command for execution.
+- **`function`**: Adds logic to randomly select GIFs.
+- **`switch`**: Routes signals based on conditions (e.g., toggling between snow and hourglass).
+- **`trigger`**: Sends a timed pulse to GPIO output.
+- **`comment`**: Helps document the flow visually in the Node-RED editor.
