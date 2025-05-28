@@ -7,7 +7,7 @@ import blogPluginEnhanced from "./src/plugins/blogPluginEnhanced";
 
 const config: Config = {
   title: "Web to know",
-  tagline: "Dinosaurs are cool",
+  tagline: "Explore, Learn, Undestand",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -174,6 +174,9 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    future: {
+      v4: true,
+    }
   } satisfies Preset.ThemeConfig,
 };
 
