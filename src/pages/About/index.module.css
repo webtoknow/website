@@ -174,10 +174,7 @@
   }
 }
 
-[data-theme="dark"] .icon [fill="#004fff"] {
-  fill: var(--docusaurus-secondary-color);
-}
 
-[data-theme="dark"] .icon [fill="#14e8a7"] {
-  fill: var(--ifm-color-primary);
+[data-theme="dark"] .heroImage [fill="#004fff"] {
+  fill: #14e8a7;
 }

@@ -56,3 +56,6 @@
   fill: #14e8a7;
 }
 
+[data-theme="dark"] .heroImage [fill="#14e8a7"] {
+  fill: #004fff;
+}
